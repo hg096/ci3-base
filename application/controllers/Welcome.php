@@ -1,0 +1,39 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 */
+
+	public function index()
+	{
+		$this->load->view('test');
+	}
+
+
+	public function insertContents()
+	{
+		echo "이동 성공 <br>";
+		echo $_SERVER['REQUEST_URI']."<br>";
+		echo $_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']."<br>";
+		echo $_SERVER["PHP_SELF"]."<br>";
+		echo basename($_SERVER["PHP_SELF"]);
+
+
+	}
+
+}
